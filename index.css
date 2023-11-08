@@ -222,6 +222,9 @@ header {
     .mob-nav .nav .drop:hover>ul {
         display: none;
     }
+    main{
+        display: none;
+    }
 }
 
 /* Mobile Navbar */
