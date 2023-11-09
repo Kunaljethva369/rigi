@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;500&display=swap" rel="stylesheet">
     <link rel="icon" href="https://app.rigi.club/wp-content/uploads/2022/09/cropped-Logo-32x32.webp">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Public+Sans:wght@200;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Public+Sans:wght@200;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -87,7 +88,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="main">
         <section class="container">
             <div class="hero-section">
                 <div class="left-section" data-aos="fade-up" data-aos-duration="1500">
@@ -107,6 +108,8 @@
                 </div>
             </div>
         </section>
+        <section class="space">
+        </section>
     </main>
     <script src="/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -114,11 +117,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js"></script>
     <script>
         AOS.init();
-        gsap.to(".right-section", {scale: 0.5, duration: 0.5});
-        gsap.to(".right-section", {scale: 0.8, duration: 1});
-        gsap.to(".right-section", {scale: 0.9, duration: 1.5});
-        gsap.to(".right-section", {scale: 1, duration: 2});
-        
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".right-section", { scale: 0, duration: 0.5 });
+        gsap.to(".right-section", { scale: 0.2, duration: 1 });
+        gsap.to(".right-section", { scale: 0.7, duration: 1.5 });
+        gsap.to(".right-section", { scale: 1, duration: 2 });
+        let tl = gsap.timeline({
+            ScrollTrigger:{
+               trigger:'.right-section',  
+            }
+        });
+        tl.to('.main',{
+            trigger:".right-section",
+            y: 0,
+            scrub:true,
+            markers:true,
+        })
     </script>
 </body>
 

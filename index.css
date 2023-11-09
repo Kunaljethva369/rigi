@@ -249,6 +249,7 @@ main {
     align-items: flex-end;
     width: 95%;
     height: calc(95vh - 71px);
+    margin: 0px auto;
 }
 
 .hero-section .left-section {
@@ -285,7 +286,47 @@ main {
     position: relative;
 }
 
-@media only screen and (max-width:567px) {
+@media only screen and (min-width:801px) and (max-width:1200px) {
+    body{
+        height: 200vh;
+    }
+
+    .hero-section{
+        width: 100%;
+        align-items: center;
+        padding-top: 150px;
+    }
+
+    .hero-section .left-section h1,
+    .hero-section .left-section .tagLine {
+        width: 100%;
+    }
+
+    .hero-section .right-section{
+        width: 55%;
+    }
+
+    .hero-section .left-section{
+        width: 45%;
+    }
+
+    .hero-section .left-section h1{
+        font-size: 26px;
+    }
+
+    .hero-section .right-section{
+        width: 350px;
+        height: 350px;
+    }
+
+    .hero-section .right-section img{
+        width: 100%;
+        top: -89px;
+    }
+
+}
+
+@media only screen and (max-width:800px) {
     body{
         height: 200vh;
     }
@@ -329,3 +370,7 @@ main {
 }
 
 /* HeroSection End */
+
+.space{
+    height: 100vh;
+}
